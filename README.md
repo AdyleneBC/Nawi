@@ -1,2 +1,4 @@
 # Nawi
 Traductor de Lenguas indígenas en México
+
+Este proyecto nace del deseo de mantener vivas las lenguas indígenas de México, reconociendo en ellas la voz de nuestros antepasados y la riqueza cultural que nos da identidad. A través de un traductor que incluye el náhuatl, mixteco, zapoteco y maya, buscamos crear un puente entre generaciones, acercando a las personas a sus raíces y fomentando el orgullo por nuestras lenguas originarias. Queremos que la tecnología se convierta en aliada de la tradición, que estas lenguas no se queden solo en los libros o en la memoria de unos pocos, sino que sigan hablándose, enseñándose y compartiéndose en el mundo digital. Este proyecto es una invitación a escuchar, aprender y celebrar la diversidad lingüística de México, recordando que cada palabra en una lengua indígena guarda una historia, una forma de ver el mundo y una herencia que vale la pena preserva
