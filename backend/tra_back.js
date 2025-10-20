@@ -35,10 +35,22 @@ function normalize(s) {
 }
 
 // Carga un lexicón y lo pre-indexa
+// Carga un lexicón y lo pre-indexa
 async function loadLex(lang) {
     if (LEX[lang]) return LEX[lang];
-    const res = await fetch(`backend/data/${lang}.json`);
-    if (!res.ok) throw new Error(`No se pudo cargar data/${lang}.json`);
+
+    const url = `./backend/data/${lang}.json`;  // <-- ruta actual
+    let res;
+    try {
+        res = await fetch(url, { cache: 'no-store' }); // evita cache duro al probar
+    } catch (netErr) {
+        throw new Error(`No se pudo solicitar ${url}. ¿Estás sirviendo la app con un servidor (http://) y no con file://?`);
+    }
+
+    if (!res.ok) {
+        throw new Error(`No se pudo cargar ${url} (status ${res.status}). Verifica que el archivo exista y el nombre sea exacto.`);
+    }
+
     const json = await res.json();
 
     const prep = (obj = { uni: {}, multi: {} }) => {
@@ -61,6 +73,7 @@ async function loadLex(lang) {
     };
     return LEX[lang];
 }
+
 
 // Versión "segura": intenta cargar y si falta el archivo, lo ignora
 async function loadLexSafe(lang) {
