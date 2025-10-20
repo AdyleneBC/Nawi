@@ -48,7 +48,7 @@
     display: flex;
     gap: 8px;
     flex-wrap: wrap;
-     margin-inline: auto;       /* centra el bloque dentro del padre */
+    margin-inline: auto;       /* centra el bloque dentro del padre */
 }
 
 select,
@@ -66,7 +66,7 @@ button,
     border-radius: 14px;
     border: 1px solid var(--border);
     outline: none;
-    font-size: 14px;
+    font-size: 15px;
 }
 
 button {
@@ -106,14 +106,14 @@ button:disabled {
 
 textarea {
     width: 100%;
-    min-height: 200px;
+    height: 30vh;
     resize: vertical;
     border-radius: 14px;
     padding: 12px;
     background: #ffffff;
     color: var(--ink);
     border: 1px solid var(--border);
-    font-size: 15px;
+    font-size: 25px;
 }
 
 .actions {
