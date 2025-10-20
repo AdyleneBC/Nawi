@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Nawi - Traductor</title>
+    <link rel="stylesheet" href="frontend/style_nav.css" />
+</head>
+
+<body>
+    <!-- NAVBAR-->
+    <nav class="nav">
+        <a class="nav__brand" href="#">
+            <svg class="nav__logo" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                    d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 2c2.7 0 5.1 1.2 6.7 3.1H5.3A8 8 0 0112 4zm-8 8c0-1.1.2-2.1.6-3h14.8c.4.9.6 1.9.6 3s-.2 2.1-.6 3H4.6c-.4-.9-.6-1.9-.6-3zm1.3 4.9h13.4A8 8 0 0112 20a8 8 0 01-6.7-3.1z" />
+            </svg>
+            <span class="nav__title">NEWI</span>
+        </a>
+
+        <div class="nav__menu">
+            <button id="menuBtn" class="nav__btn" aria-expanded="false" aria-controls="menuList">Menú ▾</button>
+            <ul id="menuList" class="nav__dropdown" hidden>
+                <li><a href="#Newi">Newi</a></li>
+                <li><a href="#funciones">X</a></li>
+                <li><a href="#documentacion">X</a></li>
+                <li><a href="#acerca">X</a></li>
+            </ul>
+        </div>
+    </nav>
+    <script src="frontend/nav.js" defer></script>
+</body>
+
+</html>
