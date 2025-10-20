@@ -14,16 +14,16 @@
     <nav class="nav">
         <a class="nav__brand" href="#">
             <img class="nav__logo-img" src="frontend/assets/logo_v.png" alt="NEWI">
-            <span class="nav__title">NEWI</span>
+            <span class="nav__title">NAWI</span>
         </a>
 
         <div class="nav__menu">
-            <button id="menuBtn" class="nav__btn" aria-expanded="false" aria-controls="menuList">Menú ▾</button>
+            <button id="menuBtn" class="nav__btn" aria-expanded="false" aria-controls="menuList"><img src="frontend/assets/icons/menu.png" alt="menu"></button>
             <ul id="menuList" class="nav__dropdown" hidden>
-                <li><a href="#Newi">Newi</a></li>
-                <li><a href="#funciones">X</a></li>
-                <li><a href="#documentacion">X</a></li>
-                <li><a href="#acerca">X</a></li>
+                <li><a href="index.html">Newi</a></li>
+                <li><a href="frontend/diccionario.html">Diccionario</a></li>
+                <li><a href="frontend/juego.html">Juego</a></li>
+                <li><a href="frontend/informacion.html">Información</a></li>
             </ul>
         </div>
     </nav>
@@ -63,11 +63,11 @@
             <div class="grid">
                 <section>
                     <div class="ta-wrap">
-                        <textarea id="input" placeholder="Escribe algo que quieras traducir....."></textarea>
+                        <textarea id="input" placeholder="Escribe para traducir....."></textarea>
 
                         <!-- Botones dentro del textarea -->
                         <div class="ta-actions ta-actions--left">
-                            <button id="speakIn">Dictar</button>
+                            <button id="speakIn"><img src="frontend/assets/icons/mic.png" alt="microfono"></button>
                             <button id="translate">Traducir</button>
                         </div>
                     </div>
@@ -80,8 +80,8 @@
 
                         <!-- Botones dentro del textarea -->
                         <div class="ta-actions ta-actions--right">
-                            <button id="copy">Copiar</button>
-                            <button id="speakOut">Leer</button>
+                            <button id="copy"><img src="frontend/assets/icons/copy.png" alt="copiar"></button>
+                            <button id="speakOut"><img src="frontend/assets/icons/volume_up2.png" alt="escuchar"></button>
 
                             <label class="gloss-check">
                                 <input type="checkbox" id="gloss" /> Mostrar glosado
