@@ -30,7 +30,6 @@
 
     <!--INICIO TRADUCTOR***************************************************-->
     <main class="container">
-        <h1 id="inicio">Bienvenid@ a Nawi</h1>
         <!-- TRADUCTOR -->
         <section id="funciones" class="app">
             <header class="app__header">
@@ -39,7 +38,7 @@
                     <!-- Origen -->
                     <select id="src">
                         <option value="auto" disabled>Detectar idioma</option>
-                        <option value="es"  selected>Español</option>
+                        <option value="es" selected>Español</option>
                         <option value="nah" disabled>Náhuatl (x)</option>
                         <option value="yua" disabled>Maya (x)</option>
                         <option value="zai" disabled>Zapoteco (x)</option>
@@ -66,7 +65,7 @@
                     <div class="ta-wrap">
                         <textarea id="input" placeholder="Escribe algo que quieras traducir....."></textarea>
 
-                        <!-- Botones “dentro” del textarea -->
+                        <!-- Botones dentro del textarea -->
                         <div class="ta-actions ta-actions--left">
                             <button id="speakIn">Dictar</button>
                             <button id="translate">Traducir</button>
@@ -79,7 +78,7 @@
                     <div class="ta-wrap">
                         <textarea id="output" placeholder="Traducción...." readonly></textarea>
 
-                        <!-- Botones “dentro” del textarea -->
+                        <!-- Botones dentro del textarea -->
                         <div class="ta-actions ta-actions--right">
                             <button id="copy">Copiar</button>
                             <button id="speakOut">Leer</button>
@@ -99,58 +98,38 @@
     <!--FIN TRADUCTOR***************************************************-->
 
     <!--PIE DE PÁGINA-->
-    <footer class="site-footer" aria-label="Pie de página">
-        <div class="footer__grid">
-            <!-- Columna 1: Redes sociales -->
-            <section class="footer__col">
-                <h3 class="footer__title">Síguenos</h3>
-                <ul class="footer__social">
-                    <li>
-                        <a href="https://instagram.com/tu_cuenta" target="_blank" rel="noopener" aria-label="Instagram">
-                            <svg viewBox="0 0 24 24" aria-hidden="true">
-                                <path
-                                    d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm0 2a3 3 0 00-3 3v10a3 3 0 003 3h10a3 3 0 003-3V7a3 3 0 00-3-3H7zm5 3.5A5.5 5.5 0 1111.999 18.5 5.5 5.5 0 0112 7.5zm0 2a3.5 3.5 0 103.5 3.5A3.5 3.5 0 0012 9.5zm6.25-2.25a1 1 0 11-1 1 1 1 0 011-1z" />
-                            </svg>
-                            <span>Instagram</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://youtube.com/@tu_cuenta" target="_blank" rel="noopener" aria-label="YouTube">
-                            <svg viewBox="0 0 24 24" aria-hidden="true">
-                                <path
-                                    d="M23 12s0-3.7-.5-5.4a3 3 0 00-2.1-2.1C18.7 4 12 4 12 4s-6.7 0-8.4.5A3 3 0 001.5 6.6C1 8.3 1 12 1 12s0 3.7.5 5.4a3 3 0 002.1 2.1C5.3 20 12 20 12 20s6.7 0 8.4-.5a3 3 0 002.1-2.1c.5-1.7.5-5.4.5-5.4zM10 15.5v-7l6 3.5-6 3.5z" />
-                            </svg>
-                            <span>YouTube</span>
-                        </a>
-                    </li>
-                </ul>
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <section>
+                <h3>Sobre nosotros</h3>
+                <p>NAWI es un proyecto de traducción y preservación lingüística.</p>
+                <p><small>© <span id="y"></span> NEWI</small></p>
             </section>
 
-            <!-- Columna 2: Información -->
-            <section class="footer__col">
-                <h3 class="footer__title">Sobre nosotros</h3>
-                <p class="footer__text">
-                    NAWI es un proyecto enfocado en traducción y preservación lingüística.
-                    Trabajamos junto a comunidades para crear herramientas inclusivas.
-                </p>
-                <ul class="footer__links">
+            <section>
+                <h3>Enlaces</h3>
+                <ul class="list">
                     <li><a href="#acerca">Acerca de NAWI</a></li>
-                    <li><a href="#documentacion">Documentación</a></li>
-                    <li><a href="mailto:hola@newi.org">Contacto</a></li>
                     <li><a href="#terminos">Términos y privacidad</a></li>
+                    <li><a href="#documentacion">Documentación</a></li>
                 </ul>
             </section>
-        </div>
 
-        <div class="footer__bar">
-            <small>© <span id="y"></span> NEWI — Todos los derechos reservados.</small>
+            <section>
+                <h3>Redes</h3>
+                <ul class="list">
+                    <li><a href="https://instagram.com/tu_cuenta" target="_blank" rel="noopener">Instagram</a></li>
+                    <li><a href="https://youtube.com/@tu_cuenta" target="_blank" rel="noopener">YouTube</a></li>
+                </ul>
+            </section>
         </div>
     </footer>
 
     <script>
-        // año dinámico para el copyright
+        // año dinámico
         document.getElementById('y').textContent = new Date().getFullYear();
     </script>
+
 
 
     <script src="frontend/nav.js" defer></script>

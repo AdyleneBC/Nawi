@@ -109,106 +109,44 @@ body {
 /* ===== Footer básico ===== */
 .site-footer {
   border-top: 1px solid var(--border);
-  background: #ffffff;
-  /* puedes usar var(--bg) si prefieres */
-  color: var(--ink);
-  margin-top: 32px;
-}
-
-.site-footer .footer__grid {
-  width: min(1100px, 100%);
-  margin: 0 auto;
-  padding: 24px 16px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  /* dos columnas */
-  gap: 24px;
-}
-
-@media (max-width: 720px) {
-  .site-footer .footer__grid {
-    grid-template-columns: 1fr;
-    /* una columna en móvil */
-  }
-}
-
-.footer__col {
-  display: grid;
-  gap: 12px;
-}
-
-.footer__title {
-  margin: 0;
-  font-size: 16px;
-  font-weight: 700;
-  letter-spacing: .2px;
-}
-
-.footer__text {
-  margin: 0;
-  line-height: 1.5;
-  color: var(--ink);
-}
-
-/* Social */
-.footer__social {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  gap: 10px;
-}
-
-.footer__social a {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
-  color: var(--ink);
-  padding: 8px 10px;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  transition: transform .12s ease, background-color .12s ease, border-color .12s ease;
-}
-
-.footer__social a:hover {
-  transform: translateY(-1px);
-  background: #fafafa;
-  border-color: #d3d6df;
-}
-
-.footer__social svg {
-  width: 18px;
-  height: 18px;
-  fill: var(--ink);
-  flex: 0 0 auto;
-}
-
-/* Links columna info */
-.footer__links {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  gap: 8px;
-}
-
-.footer__links a {
-  color: var(--ink);
-  text-decoration: none;
-  border-bottom: 1px dashed transparent;
-  transition: border-color .12s ease;
-}
-
-.footer__links a:hover {
-  border-color: var(--border);
-}
-
-/* Barra inferior */
-.footer__bar {
-  border-top: 1px solid var(--border);
-  padding: 12px 16px;
-  text-align: center;
   background: #fff;
   color: var(--ink);
+  padding: 16px 0;
+  margin-top: 24px;
+}
+
+.footer-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 16px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.site-footer h3 {
+  margin: 0 0 8px;
+  font-size: 16px;
+}
+
+.site-footer p { margin: 0 0 8px; }
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 6px;
+}
+
+.list a {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.list a:hover { text-decoration: underline; }
+
+/* Stack en móviles */
+@media (max-width: 720px) {
+  .footer-grid { grid-template-columns: 1fr; }
 }
