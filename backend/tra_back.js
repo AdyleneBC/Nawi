@@ -239,13 +239,68 @@ if ($swap) {
 
 if ($copy) {
     $copy.addEventListener('click', async () => {
-        await navigator.clipboard.writeText(($out && $out.value) || '');
-        const prev = $copy.textContent;
-        $copy.textContent = 'Copiado ✔';
-        setTimeout(() => ($copy.textContent = prev), 900);
+        const txt = ($out?.value || '').trim();
+
+        // Si no hay nada que copiar, da un pequeño feedback y sal
+        if (!txt) {
+            // feedback visual mínimo (sin CSS extra)
+            const prevTitle = $copy.title;
+            $copy.title = 'Nada para copiar';
+            setTimeout(() => { $copy.title = prevTitle; }, 800);
+            return;
+        }
+
+        // Guarda el HTML original (para no perder el <img>)
+        const prevHTML = $copy.innerHTML;
+
+        try {
+            await navigator.clipboard.writeText(txt);
+            // Muestra un check temporal (puedes usar tu propio icono)
+            $copy.innerHTML = '<img src="frontend/assets/icons/check.png" alt="Copiado">';
+        } catch (e) {
+            console.error(e);
+            $copy.innerHTML = 'Error';
+        } finally {
+            // Restaura el botón tal como estaba
+            setTimeout(() => { $copy.innerHTML = prevHTML; }, 900);
+        }
     });
 }
 
+// ===== Auto-translate mientras escribes =====
+function debounce(fn, delay = 300) {
+  let t;
+  return (...args) => {
+    clearTimeout(t);
+    t = setTimeout(() => fn(...args), delay);
+  };
+}
+
+const autoTranslate = debounce(() => {
+  const txt = ($in?.value || '').trim();
+  if (!txt) {
+    // si está vacío, limpia salida y performance
+    if ($out) $out.value = '';
+    if ($perf) $perf.textContent = '';
+    return;
+  }
+  doTranslate();
+}, 300); // puedes bajar a 200–250ms
+
+// Traducir al tipear
+if ($in) $in.addEventListener('input', autoTranslate);
+
+// Traducir al cambiar idioma origen/destino
+if ($src) $src.addEventListener('change', () => doTranslate());
+if ($tgt) $tgt.addEventListener('change', () => doTranslate());
+
+// Traducir al cargar si ya hay texto (por ejemplo, al recargar)
+window.addEventListener('DOMContentLoaded', () => {
+  if (($in?.value || '').trim()) doTranslate();
+});
+
+
+/*
 // TTS (garantizamos español; otras lenguas dependen de voces instaladas)
 if ($speakOut) {
     $speakOut.addEventListener('click', () => {
@@ -273,11 +328,16 @@ if ($speakIn) {
         rec.onerror = (e) => alert('Error en dictado: ' + e.error);
         rec.start();
     });
-}
+}*/
 
+/*
 // Atajo: Ctrl/Cmd + Enter
 if ($in) {
     $in.addEventListener('keydown', (e) => {
         if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'enter') doTranslate();
     });
 }
+*/
+
+if ($go) $go.style.display = 'none';
+
