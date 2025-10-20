@@ -1,0 +1,14 @@
+{
+    "meta": {
+        "lang": "es",
+        "variant": "general"
+    },
+    "toEs": {
+        "uni": {},
+        "multi": {}
+    },
+    "fromEs": {
+        "uni": {},
+        "multi": {}
+    }
+}

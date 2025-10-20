@@ -1,0 +1,29 @@
+{
+    "meta": {
+        "lang": "nah",
+        "variant": "general",
+        "notes": "Revisar variantes locales"
+    },
+    "toEs": {
+        "uni": {
+            "quema": "sí",
+            "ahmo": "no",
+            "atl": "agua",
+            "calli": "casa"
+        },
+        "multi": {
+            "cualli tonalli": "buenos días"
+        }
+    },
+    "fromEs": {
+        "uni": {
+            "sí": "quema",
+            "no": "ahmo",
+            "agua": "atl",
+            "casa": "calli"
+        },
+        "multi": {
+            "buenos días": "cualli tonalli"
+        }
+    }
+}
