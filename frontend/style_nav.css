@@ -1,10 +1,16 @@
+/*--bg: color de fondo base de la página.
+--ink: color de texto principal.
+--muted: tono secundario/suave (subtítulos, detalles).
+--accent: color de acento (logo, resaltados).
+--border: color de borde.*/
 :root {
-  --bg: #28c94b;
-  --ink: #e8ecff;
-  --muted: #9fb0ff;
-  --accent: #7aa2ff;
-  --border: #ced1da;
+  --bg: #ffffff;
+  --ink: #000000;
+  --muted: #ffffff;
+  --accent: #ffffff;
+  --border: #e4007c;
 }
+
 
 * {
   box-sizing: border-box;
@@ -18,7 +24,8 @@ body {
 body {
   margin: 0;
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  background: radial-gradient(1200px 700px at 10% -10%, #16204a 0, #0b1020 60%), var(--bg);
+  /*Pa los colores de la página agregué un difusor desde la esquina superior izquirda (primer valor del color)*/
+  background: radial-gradient(1200px 700px at 10% -10%, #ffffff 0, #ffffff 60%), var(--bg);
   color: var(--ink);
 }
 
@@ -33,7 +40,7 @@ body {
   gap: 12px;
   padding: 10px 16px;
   border-bottom: 1px solid var(--border);
-  background: rgba(224, 227, 240, 0.8);
+  background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(6px);
 }
 
@@ -48,7 +55,7 @@ body {
 .nav__logo {
   width: 24px;
   height: 24px;
-  fill: var(--accent);
+  /*fill: var(--accent);*/
 }
 
 .nav__title {
@@ -57,7 +64,7 @@ body {
 }
 
 .nav__btn {
-  background: #0f1630;
+  background: #ffffff;
   color: var(--ink);
   padding: 8px 12px;
   border-radius: 12px;
@@ -76,7 +83,7 @@ body {
   position: absolute;
   right: 0;
   top: calc(100% + 6px);
-  background: #0b122b;
+  background: #ffffff;
   border: 1px solid var(--border);
   border-radius: 12px;
   min-width: 180px;
@@ -92,5 +99,5 @@ body {
 }
 
 .nav__dropdown li a:hover {
-  background: #121a33;
+  background: #e4007c;
 }
