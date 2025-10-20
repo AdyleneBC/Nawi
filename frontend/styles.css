@@ -36,7 +36,6 @@
 .app__header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     gap: 12px;
     flex-wrap: wrap;
 }
@@ -49,6 +48,7 @@
     display: flex;
     gap: 8px;
     flex-wrap: wrap;
+     margin-inline: auto;       /* centra el bloque dentro del padre */
 }
 
 select,
@@ -147,4 +147,71 @@ textarea {
     width: 0%;
     background: linear-gradient(90deg, #637dff, #7aa2ff);
     transition: width .2s ease;
+}
+
+
+
+
+
+
+/* Contenedor relativo para “incrustar” acciones */
+.ta-wrap {
+    position: relative;
+}
+
+/* Aumenta el padding inferior para no tapar el texto con los botones */
+.ta-wrap>textarea {
+    padding-bottom: 56px;
+    /* ajusta según la altura real de la barra */
+}
+
+/* Barra de acciones dentro del textarea */
+.ta-actions {
+    position: absolute;
+    left: 10px;
+    /* margen interior */
+    right: 10px;
+    bottom: 10px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+
+    /* Estética: una “pastilla” semitransparente sobre el textarea */
+    background: rgba(255, 255, 255, 0.75);
+    padding: 6px 8px;
+    backdrop-filter: blur(4px);
+}
+
+/* Alineaciones: izquierda/derecha según columna */
+.ta-actions--left {
+    justify-content: flex-end;
+}
+
+.ta-actions--right {
+    justify-content: flex-end;
+}
+
+/* Botones dentro del textarea (puedes reutilizar tus estilos) */
+.ta-actions button {
+    background: #fff;
+    color: var(--ink);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 6px 10px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.ta-actions button:hover {
+    transform: translateY(-1px);
+}
+
+/* Checkbox de glosado dentro de la barra */
+.gloss-check {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    margin-left: 8px;
+    color: var(--ink);
 }

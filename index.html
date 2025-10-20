@@ -28,70 +28,75 @@
         </div>
     </nav>
 
-<!--INICIO TRADUCTOR***************************************************-->
-     <main class="container">
+    <!--INICIO TRADUCTOR***************************************************-->
+    <main class="container">
         <h1 id="inicio">Bienvenid@ a Nawi</h1>
-        <p>Comunicarte nunca fue tan fácil, hasta ahora</p>
-
         <!-- TRADUCTOR -->
-        <section id="funciones" class="card app">
+        <section id="funciones" class="app">
             <header class="app__header">
-                <h2>NAWI</h2>
                 <div class="bar">
                     <label class="sr-only" for="src">Idioma origen</label>
                     <!-- Origen -->
                     <select id="src">
                         <option value="auto" selected>Detectar idioma</option>
                         <option value="es">Español</option>
-                        <option value="nah">Náhuatl (x)</option>
-                        <option value="yua">Maya (x)</option>
-                        <option value="zai">Zapoteco (x)</option>
-                        <option value="mie">Mixteco (x)</option>
-                        
+                        <option value="nah" disabled>Náhuatl (x)</option>
+                        <option value="yua" disabled>Maya (x)</option>
+                        <option value="zai" disabled>Zapoteco (x)</option>
+                        <option value="mie" disabled>Mixteco (x)</option>
+
                     </select>
-                    <span class="pill">→</span>
+
+                    <button id="swap" title="Intercambiar">⇄</button>
+
                     <select id="tgt">
-                        <option value="es" selected>Español</option>
-                        <option value="nah">Náhuatl (x)</option>
+                        <option value="es">Español</option>
+                        <option value="nah" selected>Náhuatl (x)</option>
                         <option value="yua">Maya (x)</option>
                         <option value="zai">Zapoteco (x)</option>
                         <option value="mie">Mixteco (x)</option>
                     </select>
 
-                    <button id="swap" title="Intercambiar">⇄</button>
+
                 </div>
             </header>
 
             <div class="grid">
-                <section class="#">
-                    <h3>Texto de entrada</h3>
-                    <textarea id="input" placeholder="Escribe algo que quieras traducir....."></textarea>
-                    <div class="actions">
-                        <div class="actions__right">
+                <section>
+                    <div class="ta-wrap">
+                        <textarea id="input" placeholder="Escribe algo que quieras traducir....."></textarea>
+
+                        <!-- Botones “dentro” del textarea -->
+                        <div class="ta-actions ta-actions--left">
                             <button id="speakIn">Dictar</button>
                             <button id="translate">Traducir</button>
                         </div>
                     </div>
                 </section>
 
-                <section class="#">
-                    <h3>Traducción</h3>
-                    <textarea id="output" placeholder="Traducción...." readonly></textarea>
-                    <div class="actions">
-                        <div class="small" id="perf"></div>
-                        <div class="actions__right">
+
+                <section>
+                    <div class="ta-wrap">
+                        <textarea id="output" placeholder="Traducción...." readonly></textarea>
+
+                        <!-- Botones “dentro” del textarea -->
+                        <div class="ta-actions ta-actions--right">
                             <button id="copy">Copiar</button>
                             <button id="speakOut">Leer</button>
-                            <label style="display:flex; align-items:center; gap:6px; font-size:14px;">
+
+                            <label class="gloss-check">
                                 <input type="checkbox" id="gloss" /> Mostrar glosado
                             </label>
                         </div>
                     </div>
+
+                    <div class="small" id="perf"></div>
                 </section>
+
             </div>
         </section>
-        </main>
-<!--FIN TRADUCTOR***************************************************-->
+    </main>
+    <!--FIN TRADUCTOR***************************************************-->
 
     <!--PIE DE PÁGINA-->
     <footer class="site-footer" aria-label="Pie de página">
