@@ -52,11 +52,13 @@ body {
   color: var(--ink);
 }
 
-.nav__logo {
-  width: 24px;
+.nav__logo-img {
   height: 24px;
-  /*fill: var(--accent);*/
+  width: auto;
+  display: block;
+  /* elimina espacios fantasma en línea */
 }
+
 
 .nav__title {
   font-weight: 700;
