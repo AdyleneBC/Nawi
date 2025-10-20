@@ -31,3 +31,6 @@ if (menuBtn && menuList) {
     }
   });
 }
+
+
+// Se empieza a gregar todo el funcionamiento del traductor en otro JS
