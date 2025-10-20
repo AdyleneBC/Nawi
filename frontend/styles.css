@@ -1,3 +1,19 @@
+/* Contenido de prueba */
+.container {
+    width: min(1900px, 100%);
+    margin: 24px auto;
+    padding: 0 16px;
+    display: grid;
+    gap: 16px;
+}
+
+.card {
+    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 16px;
+    padding: 14px;
+}
+
 /*Estilos del traductor*/
 /* Accesibilidad: solo-visible-para-lectores-de-pantalla */
 .sr-only {
@@ -44,7 +60,7 @@ textarea {
 select,
 button,
 .pill {
-    background: #0f1630;
+    background: #ffffff;
     color: var(--ink);
     padding: 10px 12px;
     border-radius: 14px;
@@ -94,7 +110,7 @@ textarea {
     resize: vertical;
     border-radius: 14px;
     padding: 12px;
-    background: #0b122b;
+    background: #ffffff;
     color: var(--ink);
     border: 1px solid var(--border);
     font-size: 15px;
@@ -118,13 +134,13 @@ textarea {
     color: var(--muted);
 }
 
-.progress {
+/*.progress {
     height: 6px;
     border-radius: 999px;
     background: #0b122b;
     border: 1px solid var(--border);
     overflow: hidden;
-}
+}*/
 
 .progress>div {
     height: 100%;
