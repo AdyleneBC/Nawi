@@ -1,3 +1,5 @@
+const $glossPanel = document.getElementById('glossPanel');
+
 // ---------- TRADUCTOR (lexicones + reglas) ----------
 const $ = (id) => document.getElementById(id);
 
@@ -207,10 +209,24 @@ async function doTranslate() {
         if ($perf) $perf.textContent = `⏱ ${(t1 - t0).toFixed(0)} ms · ${src}→${tgt}`;
 
         // Glosado opcional
+        // ...dentro de doTranslate(), después de setear $out.value y $perf:
         if ($gloss && $gloss.checked) {
-            const lines = gloss.map((g) => `${g.src} → ${g.tgt}`);
+            const lines = gloss.map(g => `${g.src} → ${g.tgt}`);
             if (lines.length) {
-                $out.value += `\n\n---\nGlosado:\n${lines.join('\n')}`;
+                if ($glossPanel) {
+                    $glossPanel.textContent = `Glosado:\n` + lines.join('\n');
+                    $glossPanel.hidden = false;
+                }
+            } else {
+                if ($glossPanel) {
+                    $glossPanel.hidden = true;
+                    $glossPanel.textContent = '';
+                }
+            }
+        } else {
+            if ($glossPanel) {
+                $glossPanel.hidden = true;
+                $glossPanel.textContent = '';
             }
         }
     } catch (e) {
@@ -269,22 +285,22 @@ if ($copy) {
 
 // ===== Auto-translate mientras escribes =====
 function debounce(fn, delay = 300) {
-  let t;
-  return (...args) => {
-    clearTimeout(t);
-    t = setTimeout(() => fn(...args), delay);
-  };
+    let t;
+    return (...args) => {
+        clearTimeout(t);
+        t = setTimeout(() => fn(...args), delay);
+    };
 }
 
 const autoTranslate = debounce(() => {
-  const txt = ($in?.value || '').trim();
-  if (!txt) {
-    // si está vacío, limpia salida y performance
-    if ($out) $out.value = '';
-    if ($perf) $perf.textContent = '';
-    return;
-  }
-  doTranslate();
+    const txt = ($in?.value || '').trim();
+    if (!txt) {
+        // si está vacío, limpia salida y performance
+        if ($out) $out.value = '';
+        if ($perf) $perf.textContent = '';
+        return;
+    }
+    doTranslate();
 }, 300); // puedes bajar a 200–250ms
 
 // Traducir al tipear
@@ -296,7 +312,7 @@ if ($tgt) $tgt.addEventListener('change', () => doTranslate());
 
 // Traducir al cargar si ya hay texto (por ejemplo, al recargar)
 window.addEventListener('DOMContentLoaded', () => {
-  if (($in?.value || '').trim()) doTranslate();
+    if (($in?.value || '').trim()) doTranslate();
 });
 
 

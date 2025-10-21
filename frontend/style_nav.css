@@ -149,3 +149,19 @@ body {
 @media (max-width: 720px) {
   .footer-grid { grid-template-columns: 1fr; }
 }
+
+
+
+
+
+.gloss-panel {
+  margin-top: 6px;
+  padding: 8px 10px;
+  border: 1px dashed var(--border);
+  border-radius: 10px;
+  background: #fff;
+  color: var(--ink);
+  font-size: 12px;          /* ← más pequeño que el textarea */
+  line-height: 1.4;
+  white-space: pre-wrap;     /* respeta saltos de línea */
+}

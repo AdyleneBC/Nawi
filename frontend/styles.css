@@ -7,12 +7,7 @@
     gap: 16px;
 }
 
-.card {
-    border: 1px solid var(--border);
-    background: rgba(255, 255, 255, 0.02);
-    border-radius: 16px;
-    padding: 14px;
-}
+
 
 /*Estilos del traductor*/
 /* Accesibilidad: solo-visible-para-lectores-de-pantalla */
@@ -97,18 +92,11 @@ button:disabled {
     }
 }
 
-.card h3 {
-    margin: 4px 6px;
-    font-size: 14px;
-    color: var(--muted);
-    font-weight: 600;
-}
-
 textarea {
     width: 100%;
-    height: 30vh;
+    height: 36vh;
     resize: vertical;
-    border-radius: 14px;
+    border-radius: 10px;
     padding: 12px;
     background: #ffffff;
     color: var(--ink);
@@ -134,25 +122,7 @@ textarea {
     color: var(--muted);
 }
 
-/*.progress {
-    height: 6px;
-    border-radius: 999px;
-    background: #0b122b;
-    border: 1px solid var(--border);
-    overflow: hidden;
-}*/
-
-.progress>div {
-    height: 100%;
-    width: 0%;
-    background: linear-gradient(90deg, #637dff, #7aa2ff);
-    transition: width .2s ease;
-}
-
-
-
-
-
+/*ESTO ES PARA LOS INCONOS DENTRO DEL TEX*/
 
 /* Contenedor relativo para “incrustar” acciones */
 .ta-wrap {
@@ -195,7 +165,7 @@ textarea {
 .ta-actions button {
     background: #fff;
     color: var(--ink);
-    border: 1px solid var(--border);
+    /*border: 1px solid var(--border);*/
     border-radius: 12px;
     padding: 6px 10px;
     font-size: 14px;
