@@ -17,6 +17,46 @@ const $speakIn = $('speakIn');
 const $speakOut = $('speakOut');
 const $gloss = $('gloss');
 
+///////////////////////////////////////////
+// ===== Alert informativo al elegir lengua destino (lado derecho) =====
+/*const LANG_INFO = {
+    nah: 'Náhuatl: variantes regionales; ortografías pueden diferir. Este traductor usa un léxico base de ejemplo.',
+    yua: 'Maya yucateco: considera la glotal (ʼ) y vocales largas. Léxico base de ejemplo.',
+    zai: 'Zapoteco istmeño: alta variación por comunidad; léxico base de ejemplo.',
+    mie: 'Mixteco (Magdalena Peñasco): lengua tonal; esta versión usa pares léxicos de ejemplo.',
+    // es: sin alerta
+};
+
+let suppressTgtAlert = false; // bloquea alertas en cambios programáticos
+
+// Dispara solo en cambios iniciados por el usuario
+if ($tgt) {
+    $tgt.addEventListener('change', (e) => {
+        if (suppressTgtAlert) return;          // p.ej. al usar swap
+        if (!e.isTrusted) return;               // ignora cambios por script
+        const msg = LANG_INFO[$tgt.value];
+        if (msg) alert(msg);
+    });
+}
+
+// Si usas botón ⇄, silencia el alert al hacer el intercambio programático
+if ($swap) {
+    $swap.addEventListener('click', () => {
+        if (!$src || !$tgt) return;
+        const a = $src.value, b = $tgt.value;
+        if (a !== 'auto') {
+            suppressTgtAlert = true;
+            $src.value = b;
+            $tgt.value = a;
+            // reactivamos tras el cambio
+            queueMicrotask(() => { suppressTgtAlert = false; });
+        }
+    });
+}
+    */
+
+/////////////////////////////////////////////
+
 // Config
 const LANGS = ['nah', 'yua', 'zai', 'mie', 'es']; // catálogo posible
 const LEX = {}; // Cache de lexicones en memoria
